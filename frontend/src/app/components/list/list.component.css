@@ -1,0 +1,19 @@
+
+
+table {
+  border-collapse: separate;
+  border-spacing: 10px; /* cellspacing */
+  *border-collapse: expression('separate', cellSpacing = '10px');
+}
+
+table td, table th {
+  padding: 10px; /* cellpadding */
+}
+.mat-column-right {
+  text-align: center;
+}
+.mat-table {
+  overflow: auto;
+  max-height: 700px;
+}
+

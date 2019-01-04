@@ -1,0 +1,49 @@
+
+<div class="container">
+  <div class="row">
+  <br>
+  <mat-card>
+    <section class="mat-typography">
+      <h3>Create a new issue</h3>
+    </section>
+    <mat-divider></mat-divider>
+    <br>
+    <form [formGroup]="createForm" class="create-form" (ngSubmit)="onFormSubmit()">
+      <div>
+        <mat-form-field class="field-full-width">
+          <input  type="text" matInput placeholder="Issue Title" formControlName="title" #title />
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field-full-width">
+            <input type="text" matInput placeholder="Responsible" formControlName="responsible" #responsible>
+        </mat-form-field>
+      </div>
+      <div>
+
+        <mat-form-field class="field-full-width">
+            <textarea type="text" matInput placeholder="Description" formControlName="description" #description ></textarea>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="field-full-width">
+          <mat-select  placeholder="Severity" formControlName="severity" #severity>
+              <mat-option value="Low">Low</mat-option>
+              <mat-option value="Medium">Medium</mat-option>
+              <mat-option value="Hight">Hight</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <br><br>
+      <div>
+
+        <button mat-raised-button color="accent" routerLink="/list">Back</button>
+        <button type="submit"
+        [disabled]="createForm.pristine || createForm.invalid "
+        mat-raised-button color="primary">Save</button>
+      </div>
+    </form>
+  </mat-card>
+  </div>
+</div>

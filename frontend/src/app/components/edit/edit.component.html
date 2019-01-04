@@ -1,0 +1,63 @@
+
+<div>
+    <mat-card >
+      <section class="mat-typography">
+        <h3>Update issue</h3>
+      </section>
+
+        <mat-divider></mat-divider>
+
+      <br>
+      <div class="form-group">
+
+        <form [formGroup]="updateForm" class="edit-form" (ngSubmit)="onFormSubmit()">
+          <div>
+            <mat-form-field class="field-full-width">
+              <input matInput placeholder="Issue Title" formControlName="title" #title>
+            </mat-form-field>
+
+          </div>
+          <div>
+            <mat-form-field class="field-full-width">
+                <input matInput placeholder="Responsible" formControlName="responsible" #responsible>
+            </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field class="field-full-width">
+                  <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+              </mat-form-field>
+
+              </div>
+              <div>
+                <mat-form-field class="field-full-width">
+                  <mat-select  placeholder="Severity" formControlName="severity" #severity>
+                      <mat-option value="Low">Low</mat-option>
+                      <mat-option value="Medium">Medium</mat-option>
+                      <mat-option value="Hight">Hight</mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                </div>
+                <div>
+                  <mat-form-field class="field-full-width">
+                      <mat-select  placeholder="Status" formControlName="status" #severity>
+                          <mat-option value="Open">Open</mat-option>
+                          <mat-option value="In Progress">In Progress</mat-option>
+                          <mat-option value="Done">Done</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+          <mat-divider></mat-divider>
+          <br><br>
+          <div>
+
+            <button mat-raised-button color="accent" routerLink="/list">Back</button>
+            <button type="submit"
+
+            [disabled]="updateForm.pristine || updateForm.invalid "
+            mat-raised-button color="primary">Save</button>
+       </div>
+        </form>
+      </div>
+    </mat-card>
+    </div>
